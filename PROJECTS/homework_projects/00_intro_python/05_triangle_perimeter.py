@@ -24,7 +24,7 @@ MAGENTA = "\033[35m"
 def main():
 
     # Get the 3 side lengths of the triangle
-    side1 = float(input(f"\n\t\t{GREEN}{BOLD_ITALIC}What is the length of side 1 ?{RESET}"))
+    side1 = float(input(f"\n\t\t{GREEN}{BOLD_ITALIC}What is the length of side 1 ? {RESET}"))
     side2 = float(input(f"\t\t{CYAN}{BOLD_ITALIC}What is the length of side 2 ? {RESET}"))
     side3 = float(input(f"\t\t{MAGENTA}{BOLD_ITALIC}What is the length of side 3 ? {RESET}"))
     total = side1 + side2 + side3
