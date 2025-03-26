@@ -19,27 +19,45 @@
 
 # =============Start Program==================================
 
-C: int = 299792458  # The speed of light in m/s
+# ANSI color codes
+BOLD_ITALIC = "\033[1;3m"  # Bold + Italic
+RESET = "\033[0m"  # Reset formatting
+RED = "\033[1;31m"  # Bold Red
+BLUE = "\033[1;34m"  # Bold Blue
+GREEN = "\033[1;32m"  # Bold Green
+PURPLE = "\033[1;35m"  # Bold Purple
+YELLOW = "\033[1;33m"  # Bold Yellow
+UNDERLINE = "\033[4m"  # Underline
+
+# Constant value:
+C = 299792458  # Speed of light in m/s
+
+def calculate_energy(mass):
+    """
+    Calculate the energy using Einstein's formula: E = m * C^2
+    """
+    return mass * (C ** 2)
 
 def main():
-    mass_in_kg: float = float(input("Enter kilos of mass: "))
+    # User Input
+    value = float(input(f"\n\t\t\t{BOLD_ITALIC}{BLUE}🔹 Enter mass in kg: {RESET}"))  
 
-    # Calculate energy
-    # equivalently energy = mass * (C ** 2)
-    # using the ** operator to raise C to the power of 2
-    energy_in_joules: float = mass_in_kg * (C ** 2)
+    if value < 0:
+        print(f"\n\t\t\t{RED}❌ Invalid input! Mass cannot be negative.{RESET}")  
+        return
 
-    # Display work to the user
-    print("e = m * C^2...")
-    print("m = " + str(mass_in_kg) + " kg")
-    print("C = " + str(C) + " m/s")
-    
-    print(str(energy_in_joules) + " joules of energy!")
+    # Calculate Energy
+    energy = calculate_energy(value)
 
+    # Output Results
+    print(f"\n\t\t{BOLD_ITALIC}{UNDERLINE}{GREEN}🔬 Energy Calculation 🔬{RESET}\n")  
+    print(f"\t\t{BLUE}📌 Mass (m): {value} kg{RESET}")  
+    print(f"\t\t{PURPLE}📌 Speed of Light (C): {C} m/s{RESET}")  
+    print(f"\t\t{YELLOW}📌 Energy (E): {energy:.2e} joules{RESET}\n")  
 
-# There is no need to edit code beyond this point
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
 
-# ====================Program End=========================
+# =============Program End==================================
+
+

@@ -1,5 +1,6 @@
 # Problem Statement
-# Ask the user for two numbers, one at a time, and then print the result of dividing the first number by the second and also the remainder of the division.
+# Ask the user for two numbers, one at a time, and then print the result of dividing 
+# the first number by the second and also the remainder of the division.
 
 # Here's a sample run of the program (user input is in bold italics):
 
@@ -12,18 +13,26 @@
 # ============Start Program=============================
 # ✅Solution:
 
+# ANSI color codes
+BOLD = "\033[1m"  # Bold
+ITALIC = "\033[3m"  # Italic
+RESET = "\033[0m"  # Reset formatting
+BLUE = "\033[1;34m"  # Bold Blue
+GREEN = "\033[1;32m"  # Bold Green
+YELLOW = "\033[1;33m"  # Bold Yellow
+
 def main():
     # Get the numbers we want to divide
-    dividend: int = int(input("\n\t\tPlease enter an integer to be divided: "))
-    divisor: int = int(input("Please enter an integer to divide by: "))
+    dividend: int = int(input(f"\n\t\t{BLUE}{BOLD}{ITALIC}🔹 Please enter an integer to be divided: {RESET}"))
+    divisor: int = int(input(f"\t\t{YELLOW}{BOLD}{ITALIC}🔹 Please enter an integer to divide by: {RESET}"))
 
     quotient: int = dividend // divisor  # Divide with no remainder/decimals (integer division)
     remainder: int = dividend % divisor  # Get the remainder of the division (modulo)
     
-    print(f"\n\t\t\tThe result of this division is {quotient}  with a remainder of  {remainder}\n")
-
+    print(f"\n\t\t\t{BOLD}{GREEN}{ITALIC}✔ The result of this division is {quotient} with a remainder of {remainder}{RESET}\n")
 
 if __name__ == '__main__':
     main()
 
-# ====================Program End=========================
+# ============= End Program ==================================
+

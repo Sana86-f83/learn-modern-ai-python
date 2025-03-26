@@ -13,24 +13,38 @@
 
 # Code in Place is fun. I learned to program and used Python to make my tiny plant fly!
 
-
 # =============Start Program==================================
-SENTENCE_START: str = "Panaversity is fun. I learned to program and used Python to make my " # adjective noun verb
+
+# ANSI color codes
+BOLD_ITALIC = "\033[1;3m"  # Bold + Italic
+RESET = "\033[0m"  # Reset formatting
+RED = "\033[1;31m"  # Bold Red
+BLUE = "\033[1;34m"  # Bold Blue
+GREEN = "\033[1;32m"  # Bold Green
+YELLOW = "\033[1;33m"  # Bold Yellow
+PURPLE = "\033[1;35m"  # Bold Purple
+UNDERLINE = "\033[4m"  # Underline
+
+# Enhanced Sentence Starter
+SENTENCE_START: str = (
+    f"{BOLD_ITALIC}{BLUE}Panaversity is fun! 🚀 "
+    f"I learned to code, explored new ideas, and used Python to create my {RESET}"
+)  
 
 def main():
-    # Get the three inputs from the user to make the adlib
-    adjective: str = input("Please type an adjective and press enter. ")
-    noun: str = input("Please type a noun and press enter. ")
-    verb: str = input("Please type a verb and press enter. ")
+    # Get user inputs with colored prompts
+    adjective: str = input(f"\n\t\t{GREEN}Please type an adjective and press enter: {RESET}")
+    noun: str = input(f"\t\t{YELLOW}Please type a noun and press enter: {RESET}")
+    verb: str = input(f"\t\t{RED}Please type a verb and press enter: {RESET}")
 
-    # Join the inputs together with the sentence starter
-    print(SENTENCE_START + adjective + " " + noun + " " + verb + "!")
+    # Display the completed sentence with colors
+    print(f"\n\t\t{SENTENCE_START}{BOLD_ITALIC}{UNDERLINE}{PURPLE}{adjective} {noun} {verb}!{RESET}\n")
 
-# function call;
+# Function call;
 if __name__ == '__main__':
     main()
 
-# ====================Program End=========================    
+# ====================Program End=========================  
 
 
 
@@ -40,4 +54,4 @@ if __name__ == '__main__':
 
 
 
-# ====================Program End=========================
+

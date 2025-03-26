@@ -9,6 +9,12 @@
 #  24 hours in a day, 60 minutes in an hour, and 60 seconds per minute.
 
 # =============Start Program==================================
+# ANSI color codes
+BOLD_ITALIC = "\033[1;3m"  # Bold + Italic
+RESET = "\033[0m"  # Reset formatting
+GREEN = "\033[1;32m"  # Bold Green
+UNDERLINE = "\033[4m"  # Underline
+
 # Useful constants to help make the math easier and cleaner!
 
 DAYS_PER_YEAR: int = 365
@@ -18,7 +24,7 @@ SEC_PER_MIN: int = 60
 
 def main():
     # We can get the number of seconds per year by multiplying the handy constants above!
-    print("There are " + str(DAYS_PER_YEAR * HOURS_PER_DAY * MIN_PER_HOUR * SEC_PER_MIN) + " seconds in a year!")
+    print(f"\n\t\t\t{BOLD_ITALIC}{GREEN}{UNDERLINE}There are {DAYS_PER_YEAR * HOURS_PER_DAY * MIN_PER_HOUR * SEC_PER_MIN} seconds in a year!{RESET}\n")
 
 
 

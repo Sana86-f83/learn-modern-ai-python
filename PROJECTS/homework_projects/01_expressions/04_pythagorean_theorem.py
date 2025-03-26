@@ -17,16 +17,26 @@
 
 # The length of BC (the hypotenuse) is: 5.0
 
+# =============Start Program==================================
+
+# ANSI color codes
+BOLD_ITALIC = "\033[1;3m"  # Bold + Italic
+RESET = "\033[0m"  # Reset formatting
+PURPLE = "\033[1;35m"  # Bold Blue
+GREEN = "\033[1;32m"  # Bold Green
+UNDERLINE = "\033[4m"  # Underline
+
+
 import math  # Import the math library so we can use the sqrt function
 
 def main():
     # Get the two side lengths from the user and cast them to be numbers
-    ab: float = float(input("Enter the length of AB: "))
-    ac: float = float(input("Enter the length of AC: "))
+    ab: float = float(input(f"\n\t\t\t{BOLD_ITALIC}{GREEN}Enter the length of AB: {RESET}"))
+    ac: float = float(input(f"\n\t\t\t{BOLD_ITALIC}{GREEN}Enter the length of AC: {RESET}"))
 
     # Calculate the hypotenuse using the two sides and print it out
     bc: float = math.sqrt(ab**2 + ac**2)
-    print("The length of BC (the hypotenuse) is: " + str(bc))
+    print(f"\n\t\t\t\t{BOLD_ITALIC}{PURPLE}{UNDERLINE}The length of BC (the hypotenuse) is: {bc}{RESET}\n")
 
 
 
