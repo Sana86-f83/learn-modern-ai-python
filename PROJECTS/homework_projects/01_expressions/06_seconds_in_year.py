@@ -15,8 +15,7 @@ RESET = "\033[0m"  # Reset formatting
 GREEN = "\033[1;32m"  # Bold Green
 UNDERLINE = "\033[4m"  # Underline
 
-# Useful constants to help make the math easier and cleaner!
-
+# Constant Value:
 DAYS_PER_YEAR: int = 365
 HOURS_PER_DAY: int = 24
 MIN_PER_HOUR: int = 60
