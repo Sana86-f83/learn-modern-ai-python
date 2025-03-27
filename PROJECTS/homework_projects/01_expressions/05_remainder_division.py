@@ -34,7 +34,7 @@ def main():
 
     quotient: int = dividend // divisor  # Divide with no remainder/decimals (integer division)
     remainder: int = dividend % divisor  # Get the remainder of the division (modulo)
-
+    
     print(f"\n\t\t\t{BOLD}{GREEN}{ITALIC}✔ The result of this division is {quotient} with a remainder of {remainder}{RESET}\n")
 
 if __name__ == '__main__':
