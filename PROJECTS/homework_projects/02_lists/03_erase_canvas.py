@@ -15,8 +15,8 @@ import tkinter as tk
 import time
 
 # Canvas size and other constants
-CANVAS_WIDTH = 400
-CANVAS_HEIGHT = 400
+CANVAS_WIDTH = 800
+CANVAS_HEIGHT = 800
 CELL_SIZE = 40
 ERASER_SIZE = 20
 
