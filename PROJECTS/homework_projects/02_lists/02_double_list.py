@@ -12,7 +12,6 @@ BOLD = "\033[1m"
 ITALIC = "\033[3m"
 UNDERLINE = "\033[4m"
 RESET = "\033[0m"
-
 BLUE = "\033[1;34m"   # Bold Blue
 GREEN = "\033[1;32m"  # Bold Green
 CYAN = "\033[1;36m"   # Bold Cyan
