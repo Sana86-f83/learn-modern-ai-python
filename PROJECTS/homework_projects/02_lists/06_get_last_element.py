@@ -20,7 +20,7 @@ MAGENTA = "\033[35m"  # Magenta
 def get_first_element(lst):
     """Prints the Last element of the list if it's not empty."""
     if lst:
-        print(f"\n\t\t\t{GREEN}{BOLD}{ITALIC}📌 Last element: {lst[-1]}{RESET}")
+        print(f"\n\t\t\t{GREEN}{BOLD}{ITALIC}📌 Get Last element: {lst[-1]}{RESET}")
     else:
         print(f"\n\t\t\t\t\t{RED}The list is empty.{RESET}")
 
@@ -35,10 +35,12 @@ def get_lst():
     return lst
 
 def main():
-    print(f"{MAGENTA}{UNDERLINE}{BOLD}{ITALIC}\n\t\t\t\t\tWelcome to the List Input Program!{RESET}\n")
+    print(f"{MAGENTA}{UNDERLINE}{BOLD}{ITALIC}\n\t\t\t\t\tWelcome to the List Input Program!{RESET}")
+    print(f"{YELLOW}{UNDERLINE}{BOLD}{ITALIC}\n\t\t\t\t\t\t✅ Access Last Element Program !{RESET}\n")
     lst = get_lst()
+    print(f"\n\t\t\t\t\t\t{MAGENTA}{UNDERLINE}{BOLD}{ITALIC}📃 List of elements --> {lst}")
     get_first_element(lst)
-    print(f"{BGRED}{BLACK}{ITALIC}\t\t\t\t\t\t🌟 Program execution completed!🌟   {RESET}\n")
+    print(f"\n{BGRED}{BLACK}{ITALIC}\t\t\t\t\t\t🌟 Program execution completed!🌟   {RESET}\n")
 
 if __name__ == "__main__":
     main()
