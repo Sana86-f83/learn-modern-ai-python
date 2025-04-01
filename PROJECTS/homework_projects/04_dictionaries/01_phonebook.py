@@ -6,7 +6,7 @@ def read_phone_numbers():
     phonebook = {}                   # Create empty phonebook
 
     while True:
-        name = input("Name: ")
+        name = input("Enter a Name here: ")
         if name == "":
             break
         number = input("Number: ")
