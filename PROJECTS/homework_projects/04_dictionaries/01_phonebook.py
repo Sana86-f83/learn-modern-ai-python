@@ -33,7 +33,7 @@ def lookup_numbers(phonebook):
         if name == "":
             break
         if name not in phonebook:
-            print(name + " is not in the phonebook")
+            print(f"{name} is not in the phonebook")
         else:
             print(phonebook[name])
 
