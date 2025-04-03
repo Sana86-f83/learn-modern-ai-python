@@ -18,8 +18,6 @@ MAGENTA = "\033[35m"
 RED = "\033[31m"
 
 
-
-
 def get_user_numbers():
     """
     Ask the user to input numbers and store them in a list.
