@@ -1,5 +1,3 @@
-
-
 # Problem Statement
 # You want to be safe online and use different passwords for different websites. However, you are forgetful at times and want to make a program that can match which password belongs to which website without storing the actual password!
 
@@ -17,55 +15,63 @@
 
 # (Hint. You will need to use the provided hash_password(...) function. You don't necessarily need to know how it works, just know that hash_password(...) returns the hash for the password!)
 
-from hashlib import sha256
+import hashlib
 
-def login(email, stored_logins, password_to_check):
-    """
-    Returns True if the hash of the password we are checking matches the one in stored_logins
-    for a specific email. Otherwise, returns False.
+# ANSI color codes for styling
+RESET = "\033[0m"
+BOLD = "\033[1m"
+ITALIC = "\033[3m"
+GREEN = "\033[92m"
+RED = "\033[91m"
+CYAN = "\033[96m"
+YELLOW = "\033[93m"
 
-    email: the email we are checking the password for
-    stored_logins: a dictionary pointing from an email to its hashed password
-    password_to_check: a password we want to test alongside the email to login with
-    """
-    
-    if stored_logins[email] == hash_password(password_to_check):
-        return True
-    
-    return False
-
-# There is no need to edit code beyond this point
+# Program heading
+print(f"\n\t\t\t\t{BOLD}{CYAN}--------------------------------------")
+print(f"\t\t\t\t{BOLD}{CYAN}      🔐 Secure Login System 🔐")
+print(f"\t\t\t\t{BOLD}{CYAN}--------------------------------------{RESET}\n")
 
 def hash_password(password):
     """
-    Takes in a password and returns the SHA256 hashed value for that specific password.
-    
-    Inputs:
-        password: the password we want
-    
-    Outputs:
-        the hashed form of the input password
+    Hashes the password using SHA256.
     """
+    return hashlib.sha256(password.encode()).hexdigest()
 
-    return sha256(password.encode()).hexdigest()
+# Dictionary storing emails and their hashed passwords
+stored_logins = {
+    "user@example.com": hash_password("hello"),  # Hashed 'hello'
+    "test@domain.com": hash_password("password"), # Hashed 'password'
+    "sana@example.com":hash_password("sanaumer")  # Hashed 'sanaumer'
+}
 
-def main():
-    # stored_logins is a dictionary with emails as keys and hashed passwords as values
-    stored_logins = {
-        "example@gmail.com": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
-        "code_in_placer@cip.org": "973607a4ae7b4cf7d96a100b0fb07e8519cc4f70441d41214a9f811577bb06cc",
-        "student@stanford.edu": "882c6df720fd99f5eebb1581a1cf975625cea8a160283011c0b9512bb56c95fb"
-    }
-    
-    print(login("example@gmail.com", stored_logins, "word"))
-    print(login("example@gmail.com", stored_logins, "password"))
-    
-    print(login("code_in_placer@cip.org", stored_logins, "Karel"))
-    print(login("code_in_placer@cip.org", stored_logins, "karel"))
-    
-    print(login("student@stanford.edu", stored_logins, "password"))
-    print(login("student@stanford.edu", stored_logins, "123!456?789"))
+def login(email, password_to_check):
+    """
+    This function checks if the password_to_check matches the stored hashed password for the given email.
 
+    Args:
+    - email (str): The email to check.
+    - password_to_check (str): The password to check.
 
-if __name__ == '__main__':
-    main()
+    Returns:
+    - bool: True if the password matches, False otherwise.
+    """
+    if email in stored_logins:
+        hashed_password = hash_password(password_to_check)
+        
+        if hashed_password == stored_logins[email]:
+            print(f"\t\t\t\t{GREEN}{BOLD}✅ Login successful! Welcome, {email}.{RESET}\n")
+            return True
+        else:
+            print(f"\t\t\t\t\t\t{RED}{BOLD}❌ Incorrect password. Please try again.{RESET}\n")
+            return False
+    else:
+        print(f"\t\t\t\t\t{YELLOW}{ITALIC}⚠️  Email not found. Please register first.{RESET}\n")
+        return False
+
+# Testing the function
+print(f"\t\t\t\t\t{BOLD}{ITALIC}🔍 Testing Login System...{RESET}\n")
+login("user@example.com", "hello")  # Expected output: Success ✅
+login("user@example.com", "wrongpassword")  # Expected output: Incorrect ❌
+login("test@domain.com", "password")  # Expected output: Success ✅
+login("unknown@domain.com", "test")  # Expected output: Email not found ⚠️
+login("sana@example.com","sanaumer") # Expected output: Success ✅
