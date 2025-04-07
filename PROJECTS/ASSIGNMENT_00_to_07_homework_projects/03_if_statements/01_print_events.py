@@ -9,6 +9,7 @@ GREEN = "\033[1;32m" # Bold Green
 RESET = "\033[0m"   # Reset text color
 MAGENTA = "\033[35m"
 
+# =====================================================
 
 def main():
     print(f"\n\t\t\t{BOLD}{GREEN}First 20 Even Numbers:{RESET}\n")

@@ -36,17 +36,14 @@ voting_ages = {
 def main():
     print(f"\n\t\t\t\t\t\t{BOLD}{CYAN}🌍 Welcome to the Voting Eligibility Checker!{RESET}\n")
     
-    # User se age input lena
     user_age = int(input(f"\t\t\t\t{BOLD}📝 How old are you? {RESET}"))
 
-    # Har country ke liye eligibility check karna
     for country, age in voting_ages.items():
         if user_age >= age:
             print(f"\n\t\t\t\t\t{GREEN}✅ You can vote in {country} where the voting age is {age}.{RESET}")
         else:
             print(f"\n\t\t\t\t\t\t{RED}❌ You cannot vote in {country} where the voting age is {age}.{RESET}\n")
 
-# Program start hone ka point
 if __name__ == '__main__':
     main()
 
