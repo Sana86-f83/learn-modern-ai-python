@@ -35,7 +35,7 @@ def main():
 
     while val != "":  # While the user input isn't an empty value
         lst.append(val)  # Add val to list
-        val = input(f"\n\t\t\t\t{BOLD}{ITALIC}{GREEN}Enter a next value: {BLUE}")  # Get the next value to add
+        val = input(f"\n\t\t\t\t{BOLD}{ITALIC}{GREEN}Enter a next value:{BLUE}")  # Get the next value to add
         print(RESET, end="")  # Reset color after input
 
 
@@ -44,7 +44,6 @@ def main():
 
     # Print the final list
     print(f"\n\t\t\t\t\t{BOLD}{YELLOW}{ITALIC}Here's the list: {colored_list}{RESET}\n")
-
 
 
 if __name__ == '__main__':
