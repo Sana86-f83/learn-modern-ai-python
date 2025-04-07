@@ -28,7 +28,6 @@ MAGENTA = "\033[35m"
 CYAN = "\033[96m"
 
 
-
 # Define Minimum Height
 MINIMUM_HEIGHT: int = 50  # Arbitrary units (e.g., inches or cm)
 

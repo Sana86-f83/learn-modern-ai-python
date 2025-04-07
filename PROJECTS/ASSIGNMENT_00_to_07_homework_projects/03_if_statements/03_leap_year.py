@@ -22,8 +22,6 @@ def main():
     ITALIC = "\033[3m"
     MAGENTA = "\033[35m"
 
-
-
     print(f"\n\t\t\t\t{BOLD}{MAGENTA}{UNDERLINE}{ITALIC}Leap Year Checker: Determine if a Year is a Leap Year or Not{RESET}")
     # Get the year to check from the user
     year = int(input(f'\n\t\t\t\t\t\t{CYAN}{BOLD}{ITALIC}Please input a year: '))
@@ -39,7 +37,6 @@ def main():
     else:  # (Not divisible by 4)
         print(f"\n\t\t\t\t\t\t\t{RED}{BOLD}{ITALIC}That's not a leap year.{RESET}\n")
 
-# There is no need to edit code beyond this point
 
 if __name__ == '__main__':
     main()
