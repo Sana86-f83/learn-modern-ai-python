@@ -45,7 +45,6 @@ def main():
     total_cost = 0  # Total cost initialization
 
 
-
     # Loop through fruits dictionary
     for fruit_name, price in fruits.items():
         while True:
