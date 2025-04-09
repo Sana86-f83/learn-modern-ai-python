@@ -27,14 +27,14 @@ def main():
     print(f"\t\t\t\t         🔢 Fibonacci Sequence 🔢")
     print(f"\t\t\t\t-----------------------------------{RESET}\n")
 
-    curr_term = 0  # The 0th Fibonacci Number
-    next_term = 1  # The 1st Fibonacci Number
+    a = 0  # The 0th Fibonacci Number
+    b = 1  # The 1st Fibonacci Number
 
-    while curr_term <= MAX_TERM_VALUE:
-        print(f"{GREEN}{curr_term}{RESET}",end= "--")  # Display Fibonacci number in green
-        term_after_next = curr_term + next_term
-        curr_term = next_term
-        next_term = term_after_next
+    while a <= MAX_TERM_VALUE:
+        print(f"{GREEN}{a}{RESET}",end= "--")  
+        c = a + b
+        a = b
+        b = c
 
     print(f"\n\n\t\t\t\t{BOLD}{YELLOW}✅ Sequence completed up to {MAX_TERM_VALUE}!{RESET}\n")
 
