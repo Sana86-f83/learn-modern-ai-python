@@ -12,10 +12,17 @@
 # Will print out the values 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. The values printed in liftoff are 10 minus the number of times the for loop has completed.
 
 # ============================================================
+CYAN = "\033[96m"
+RESET = "\033[0m"
+GREEN = "\033[92m"
+BOLD = "\033[1m"
+
+
 def main():
     for i in range(10, 0, -1):  # Countdown from 10 to 1
-        print(i, end=' ')
-    print("Liftoff!")  # After countdown, print Liftoff!
+        print()
+        print(f"\t\t{CYAN}{BOLD} {i}{RESET}",end=' ')
+    print(f"\n\t\t{GREEN}{BOLD}Liftoff!{RESET}\n")  # After countdown, print Liftoff!
 
 if __name__ == "__main__":
     main()
