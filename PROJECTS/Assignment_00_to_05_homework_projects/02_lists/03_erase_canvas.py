@@ -12,7 +12,6 @@ sets all of the rectangles it is in contact with to white.
 """
 # ===================Start Program=========================================
 import tkinter as tk
-import time
 
 # Canvas size and other constants
 CANVAS_WIDTH = 800
